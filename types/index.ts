@@ -95,3 +95,31 @@ export interface HourlyPattern {
   avg_probability: number;
   sample_count: number;
 }
+
+export interface SpaceComment {
+  id: string;
+  body: string;
+  created_at: string;
+  user_id: string;
+  display_name: string | null;
+  badge: Badge;
+}
+
+export interface Achievement {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  sort_order: number;
+  earned_at: string | null;
+}
+
+export interface DailyMission {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  goal: number;
+  progress: number;
+  completed: boolean;
+}

@@ -11,10 +11,11 @@ Go to **Supabase Dashboard → SQL Editor** and run each file in order.
 **Migration 001** — paste contents of `supabase/migrations/001_initial.sql`
 **Migration 002** — paste contents of `supabase/migrations/002_realtime_probability_notifications.sql`
 **Migration 003** — paste contents of `supabase/migrations/003_phase2_3_4_features.sql`
+**Migration 004** — paste contents of `supabase/migrations/004_phase5_6_7.sql`
 
 > Run them one at a time, confirm no errors before moving to the next.
 
-✅ Done when: no red errors, and you can see `spaces`, `profiles`, `reports`, `saved_locations`, `push_tokens`, `space_flags` tables in the Table Editor.
+✅ Done when: no red errors, and you can see `spaces`, `profiles`, `reports`, `saved_locations`, `push_tokens`, `space_flags`, `bookmarked_spaces`, `space_comments`, `achievements`, `user_achievements`, `daily_missions`, `user_daily_progress` tables in the Table Editor.
 
 ---
 
@@ -187,7 +188,38 @@ Do this on the physical device.
 
 ---
 
-## 12. Test — Push Notifications (requires steps 5 + 6 complete)
+## 12. Test — Phase 5 Features (Discovery)
+
+- [ ] Tap "列表" filter button on map → nearby-list screen opens, spaces sorted by distance
+- [ ] Toggle filter tabs: "全部" / "有空" / "收藏" → lists update correctly
+- [ ] Toggle sort: "距離" / "空位率" → order changes
+- [ ] Open a space detail → tap bookmark icon (top right) → icon fills in; go to 收藏 tab → space appears
+- [ ] Tap search icon (top right of map) → type a Taipei address → map animates to that location
+
+---
+
+## 13. Test — Phase 6 Features (Comments)
+
+- [ ] Open any space detail → scroll down to "留言討論" → tap to expand
+- [ ] Type a comment and tap send → comment appears in the thread
+- [ ] Tap trash icon on your own comment → comment is deleted
+- [ ] Open same space on a second device → both see the same comments
+
+---
+
+## 14. Test — Phase 7 Features (Gamification)
+
+- [ ] Submit your first report → success response should include `new_achievements: ["first_report"]` → alert shows "成就解鎖！"
+- [ ] Profile tab → "今日任務" card shows 3 missions with progress bars
+  - Complete "回報空位" (report an empty space) → bar fills and checkmark appears
+  - Complete "探索新區" (create a new space) → bar fills
+  - Complete "確認現況" twice → bar fills
+- [ ] Profile tab → "成就" section shows achievement pills; tap "查看全部" → achievements screen opens
+- [ ] Achievements screen shows earned (full colour) vs locked (faded) achievements with earned date
+
+---
+
+## 15. Test — Push Notifications (requires steps 5 + 6 complete)
 
 - [ ] Go to **Settings** tab → Set Home Location → toggle "通知" on
 - [ ] From another device, report a space as "有空位" near your home location

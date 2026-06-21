@@ -1,25 +1,69 @@
 {
   "expo": {
-    "name": "yo-parking",
+    "name": "Yo車位",
     "slug": "yo-parking",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
+    "scheme": "yo-parking",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.yoparking.app",
+      "config": {
+        "googleMapsApiKey": "AIzaSyBVB25CFCZoR5lNnr-CwWPy8zqmkI-z6wI"
+      },
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+      "package": "com.yoparking.app",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBVB25CFCZoR5lNnr-CwWPy8zqmkI-z6wI"
+        }
       },
-      "predictiveBackGestureEnabled": false
+      "adaptiveIcon": {
+        "backgroundColor": "#0F766E",
+        "foregroundImage": "./assets/android-icon-foreground.png"
+      },
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Yo車位 needs your location to show parking near you and to verify your reports.",
+          "locationWhenInUsePermission": "Yo車位 needs your location to show parking near you and to verify your reports."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#0F766E"
+        }
+      ],
+      "expo-web-browser",
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c0a92a0a-783c-4095-b646-f8cda89d78cf"
+      }
+    },
+    "owner": "willisliaos-organization"
   }
 }
