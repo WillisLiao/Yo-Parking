@@ -10,20 +10,12 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.yoparking.app",
-      "config": {
-        "googleMapsApiKey": "AIzaSyBVB25CFCZoR5lNnr-CwWPy8zqmkI-z6wI"
-      },
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
       "package": "com.yoparking.app",
-      "config": {
-        "googleMaps": {
-          "apiKey": "AIzaSyBVB25CFCZoR5lNnr-CwWPy8zqmkI-z6wI"
-        }
-      },
       "adaptiveIcon": {
         "backgroundColor": "#0F766E",
         "foregroundImage": "./assets/android-icon-foreground.png"
